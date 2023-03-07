@@ -1,0 +1,26 @@
+
+package compilador;
+
+import java_cup.runtime.*;
+
+class Parser;
+
+/**SIMBOLOS TERMINALES**/
+terminal SUMA, MULTIPLICACION, APAREN, CPAREN, RESTA, DIVICION;
+terminal Integer NUMERO;
+
+/**SIMBOLOS NO TERMINALES**/
+nonterminal Integer expr;
+
+/** PRECEDENCIA EN CUP **/
+
+precedence left MULTIPLICACION;
+precedence left DIVICION;
+precedence left SUMA;
+precedence left RESTA;
+
+/** INDICADOR DONDE INICIA LA GRAMATICA **/
+
+start with expr;
+
+//* Gramatica luego puedo sproducir un *//
